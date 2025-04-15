@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ẩm thực Lạng Sơn</title>
+  <link ref="stylesheet" href="TestKtra.css"/>
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "sidebar content"
+    "footer footer";
+    grid-template-columns: 250px 1fr;
+    gap: 10px;
+}
+
+header {
+    grid-area: header;
+    background-color: #cc0000;
+    padding: 10px;
+    text-align: right;
+}
+
+header input {
+    padding: 5px;
+}
+ 
+header button {
+    padding: 6px 12px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    background-color: #ffa500;
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.product-filter {
+    margin-top: 20px;
+}
+
+.product-filter select,
+.product-filter button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 6px;
+}
+
+.content {
+    grid-area: content;
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    background: white;
+}
+
+.item img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.item div {
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #cc0000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+<body>
+    <div class="container">
+        <header>
+            <input type="text" placeholder="Tìm Kiếm..." />
+            <button onclick="search()">Tìm Kiếm</button>
+        </header>
+        <nav class="sidebar">
+            <ul>
+                <li>Trang chủ</li>
+                <li>Giới thiệu</li>
+                <li>Tin tức</li>
+                <li>Du lịch</li>
+                <li>Ẩm thực</li>
+                <li>Dịch vụ</li>
+                <li>Liên hệ</li>
+                <li>Thành viên</li>
+            </ul>
+            <div class="product-filter">
+                <label>Chọn nhóm sản phẩm</label>
+                <select id>
+                    <option>-- chọn nhóm --</option>
+                    <option value="nem">Nem nướng</option>
+                    <option value="vit">Vịt quay</option>
+                </select>
+                <label>Chọn sản phẩm mức giá</label>
+                <select>
+                    <option>-- chọn mức giá --</option>
+                </select>
+                <button>Tìm Kiếm</button>
+            </div>
+        </nav>
+        <main class="content">
+            <section class="item" data-group="nem" data-price="medium">
+                <img src="https://image.anninhthudo.vn/1200x630/Uploaded/2025/xtsmr/2023_02_11/img-9321-5926.jpg" alt="Nem nướng"/>
+                <div class="data-keywords">
+                    <h3>Nem nướng Hữu Lũng</h3>
+                    <p>
+                        Được chế tác từ đủ thú nguyên liệu ngon ngọt khiến những du khách đến Lạng Sơn phải phát mê
+                    </p>
+                </div>
+            </section>
+            <section class="item" data-group="vit" data-price="high">
+                <img src="https://dacsanlangson.net/wp-content/uploads/2024/05/vit-quay-lang-son-2-1.jpg" alt="Vịt quay"/>
+                <div class="data-keywords">
+                    <h3>Vịt quay lạng sơn</h3>
+                    <p>
+                        Những con vịt được quay trên bếp than chảy mỡ với những gia vị được thêm vào và đặc biệt là nước chấm của người Lạng Sơn sẽ khiến những du khách không thể quên được
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            TRƯỜNG CAO ĐẲNG SƯ PHẠM LẠNG SƠN<br />
+            Điện Thoại: 02053.812.182<br />
+            Email: cdsp.langson@moet.edu.vn
+        </footer>
+    </div>
+    <script src="TestKtra.js"></script>
+</body>
+</html>
